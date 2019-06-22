@@ -23,36 +23,16 @@
     <div id="info" class="card text-white bg-danger mb-3" style="max-width: 38rem;">
         <div class="form-group">
             <label for="exampleFormControlInput1">Name (Required)</label>
-            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="First Name Last Name">
+            <input type="text" class="form-control" id="friendName" placeholder="First Name Last Name">
             <label for="exampleFormControlInput1">Photo Link (Required)</label>
-            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Paste the link here...">
+            <input type="text" class="form-control" id="friendPic" placeholder="Paste the link here...">
         </div>
     </div>
     </div>
     <form>
         <div class="form-group">
             <label for="exampleFormControlSelect1">Question 1:</label>
-            <select class="form-control" id="exampleFormControlSelect1">
-                <option>1 (Strongly Disagree)</option>
-                <option>2</option>
-                <option>3 (Neutral)</option>
-                <option>4</option>
-                <option>5 (Strongly Agree)</option>
-            </select>
-        </div>
-        <div class="form-group">
-            <label for="exampleFormControlSelect1">Question 1:</label>
-            <select class="form-control" id="exampleFormControlSelect1">
-                <option>1 (Strongly Disagree)</option>
-                <option>2</option>
-                <option>3 (Neutral)</option>
-                <option>4</option>
-                <option>5 (Strongly Agree)</option>
-            </select>
-        </div>
-        <div class="form-group">
-            <label for="exampleFormControlSelect1">Question 1:</label>
-            <select class="form-control" id="exampleFormControlSelect1">
+            <select class="form-control" id="q1">
                 <option>1 (Strongly Disagree)</option>
                 <option>2</option>
                 <option>3 (Neutral)</option>
@@ -62,7 +42,7 @@
         </div>
         <div class="form-group">
             <label for="exampleFormControlSelect1">Question 2:</label>
-            <select class="form-control" id="exampleFormControlSelect1">
+            <select class="form-control" id="q2">
                 <option>1 (Strongly Disagree)</option>
                 <option>2</option>
                 <option>3 (Neutral)</option>
@@ -72,7 +52,7 @@
         </div>
         <div class="form-group">
             <label for="exampleFormControlSelect1">Question 3:</label>
-            <select class="form-control" id="exampleFormControlSelect1">
+            <select class="form-control" id="q3">
                 <option>1 (Strongly Disagree)</option>
                 <option>2</option>
                 <option>3 (Neutral)</option>
@@ -82,7 +62,7 @@
         </div>
         <div class="form-group">
             <label for="exampleFormControlSelect1">Question 4:</label>
-            <select class="form-control" id="exampleFormControlSelect1">
+            <select class="form-control" id="q4">
                 <option>1 (Strongly Disagree)</option>
                 <option>2</option>
                 <option>3 (Neutral)</option>
@@ -92,7 +72,7 @@
         </div>
         <div class="form-group">
             <label for="exampleFormControlSelect1">Question 5:</label>
-            <select class="form-control" id="exampleFormControlSelect1">
+            <select class="form-control" id="q5">
                 <option>1 (Strongly Disagree)</option>
                 <option>2</option>
                 <option>3 (Neutral)</option>
@@ -102,7 +82,7 @@
         </div>
         <div class="form-group">
             <label for="exampleFormControlSelect1">Question 6:</label>
-            <select class="form-control" id="exampleFormControlSelect1">
+            <select class="form-control" id="q6">
                 <option>1 (Strongly Disagree)</option>
                 <option>2</option>
                 <option>3 (Neutral)</option>
@@ -112,7 +92,7 @@
         </div>
         <div class="form-group">
             <label for="exampleFormControlSelect1">Question 7:</label>
-            <select class="form-control" id="exampleFormControlSelect1">
+            <select class="form-control" id="q7">
                 <option>1 (Strongly Disagree)</option>
                 <option>2</option>
                 <option>3 (Neutral)</option>
@@ -122,7 +102,7 @@
         </div>
         <div class="form-group">
             <label for="exampleFormControlSelect1">Question 8:</label>
-            <select class="form-control" id="exampleFormControlSelect1">
+            <select class="form-control" id="q8">
                 <option>1 (Strongly Disagree)</option>
                 <option>2</option>
                 <option>3 (Neutral)</option>
@@ -132,7 +112,7 @@
         </div>
         <div class="form-group">
             <label for="exampleFormControlSelect1">Question 9:</label>
-            <select class="form-control" id="exampleFormControlSelect1">
+            <select class="form-control" id="q9">
                 <option>1 (Strongly Disagree)</option>
                 <option>2</option>
                 <option>3 (Neutral)</option>
@@ -142,7 +122,7 @@
         </div>
         <div class="form-group">
             <label for="exampleFormControlSelect1">Question 10:</label>
-            <select class="form-control" id="exampleFormControlSelect1">
+            <select class="form-control" id="q10">
                 <option>1 (Strongly Disagree)</option>
                 <option>2</option>
                 <option>3 (Neutral)</option>
@@ -150,6 +130,7 @@
                 <option>5 (Strongly Agree)</option>
             </select>
         </div>
+
 
     </form>
 
@@ -160,7 +141,7 @@
 
     <footer class="footer">
         <br>
-        <p><a href="localhost:3000/api/friends">API Friends List</a><span> | </span>
+        <p><a href="routes/api/friends">API Friends List</a><span> | </span>
             <a href="https://github.com/mariarabin/FriendFinder">Github Repo</a></p>
         <br>
         Copyright &copy
@@ -182,3 +163,70 @@
 </body>
 
 </html>
+
+
+
+
+
+<!-- BELOW CODE IS CRITICAL. IT HANDLES HOW FORM DATA IS SENT TO OUR SERVER -->
+<script type="text/javascript">
+    // Our api recognizes the route (/api/tables)... and then runs the associated code (found in api-routes.js).
+    // In this case the associated code "saves" the data to the table-data.js file or waitinglist-data.js file
+
+    $(".submit").on("click", function (event) {
+        event.preventDefault();
+
+        // Here we grab the form elements
+        var newfriend = {
+            newFriendName: $("#friendName").val().trim(),
+            newFriendPic: $("#friendName").val().trim(),
+            q1: $("#q1").val().trim(),
+            q2: $("#q2").val().trim(),
+            q3: $("#q3").val().trim(),
+            q4: $("#q4").val().trim(),
+            q5: $("#q5").val().trim(),
+            q6: $("#q6").val().trim(),
+            q7: $("#q7").val().trim(),
+            q8: $("#q8").val().trim(),
+            q9: $("#q9").val().trim(),
+            q10: $("#q10").val().trim()
+        };
+
+        console.log(newfriend);
+
+        // This line is the magic. It"s very similar to the standard ajax function we used.
+        // Essentially we give it a URL, we give it the object we want to send, then we have a "callback".
+        // The callback is the response of the server. In our case, we set up code in api-routes that "returns" true or false
+        // depending on if a tables is available or not.
+
+        $.post("/routes/api/friends", newfriend,
+            function (data) {
+
+                // If a table is available... tell user they are booked.
+                if (data) {
+                    alert("Yay! You are officially added!");
+                }
+
+                // If a table is available... tell user they on the waiting list.
+                else {
+                    alert("Sorry you are on the wait list");
+                }
+
+                // Clear the form when submitting
+
+                $("#friendName").val("");
+                $("#q1").val("");
+                $("#q2").val("");
+                $("#q3").val("");
+                $("#q4").val("");
+                $("#q5").val("");
+                $("#q6").val("");
+                $("#q7").val("");
+                $("#q8").val("");
+                $("#q9").val("");
+                $("#q10").val("");
+            });
+
+    });
+
+</script>

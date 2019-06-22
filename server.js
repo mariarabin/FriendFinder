@@ -13,12 +13,8 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 // ROUTER
-// The below points our server to a series of "route" files.
-// These routes give our server a "map" of how to respond when users visit or request data from various URLs.
-
-require("./routes/api/friends")(app);
-require("./routes/htmlRoutes")(app);
-
+require("./app/routing/apiRoutes")(app);
+require("./app/routing/htmlRoutes")(app);
 
 
 // The below code effectively "starts" our server

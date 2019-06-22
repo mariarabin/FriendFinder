@@ -1,9 +1,4 @@
-// ===============================================================================
-// DATA
-// Below data will hold all of the friends tables.
-// Initially we just set it equal to a "dummy" friend.
-// But you could have it be an empty array as well.
-// ===============================================================================
+// Friends List
 
 var friendsList = [
     {
