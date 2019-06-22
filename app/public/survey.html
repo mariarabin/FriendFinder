@@ -134,9 +134,9 @@
 
     </form>
 
-    <div>
-        <button class="btn btn-danger" type="submit" name="action" id="submitButton">Submit</button>
-    </div>
+
+    <button class="btn btn-danger" type="submit" name="action" id="submitButton">Submit</button>
+
 
 
     <footer class="footer">
@@ -156,6 +156,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery.js"></script>
 
 
 
@@ -173,13 +174,13 @@
     // Our api recognizes the route (/api/tables)... and then runs the associated code (found in api-routes.js).
     // In this case the associated code "saves" the data to the table-data.js file or waitinglist-data.js file
 
-    $(".submit").on("click", function (event) {
+    $("#submitButton").on("click", function (event) {
         event.preventDefault();
 
         // Here we grab the form elements
         var newfriend = {
             newFriendName: $("#friendName").val().trim(),
-            newFriendPic: $("#friendName").val().trim(),
+            newFriendPic: $("#friendPic").val().trim(),
             q1: $("#q1").val().trim(),
             q2: $("#q2").val().trim(),
             q3: $("#q3").val().trim(),
@@ -201,18 +202,10 @@
 
         $.post("/routes/api/friends", newfriend,
             function (data) {
-
-                // If a table is available... tell user they are booked.
-                if (data) {
-                    alert("Yay! You are officially added!");
-                }
-
-                // If a table is available... tell user they on the waiting list.
-                else {
-                    alert("Sorry you are on the wait list");
-                }
-
-                // Clear the form when submitting
+                console.log("ok");
+                //Display Match
+                //$('#match).html(data.matchFriend);
+                //$('#modal').modal('open');
 
                 $("#friendName").val("");
                 $("#q1").val("");
