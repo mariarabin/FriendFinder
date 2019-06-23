@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="/FriendFinder/assets/css/style.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
 </head>
 
 <body>
@@ -135,40 +137,33 @@
     </form>
 
 
-    <button class="btn btn-danger" type="submit" name="action" id="submitButton">Submit</button>
+    <button class="btn btn-danger" data-toggle="modal" data-target="#myModal" type="submit" name="action"
+        id="submitButton">Submit</button>
 
+    <div id="#myModal" class="modal fade" role="dialog" tabindex="-1" aria-labelledby="...">
+        <div class="modal=dialog">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <div class="modal-body">
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
 
-
-    <footer class="footer">
-        <br>
-        <p><a href="routes/api/friends">API Friends List</a><span> | </span>
-            <a href="https://github.com/mariarabin/FriendFinder">Github Repo</a></p>
-        <br>
-        Copyright &copy
-    </footer>
-
-    <!--MODAL TO USE-->
-    <div class="modal" tabindex="-1" role="dialog" aria-labelledby="...">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Here is your match:</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <h4>Closest Friend Match</h4>
-                    <div class="divider"></div>
-                    <h5 id="userMatch"></h5>
-                    <img id="userMatchImage" class="materialboxed" width="650" src="">
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </div>
+
+
+
+            <footer class="footer">
+                <br>
+                <p><a href="routes/api/friends">API Friends List</a><span> | </span>
+                    <a href="https://github.com/mariarabin/FriendFinder">Github Repo</a></p>
+                <br>
+                Copyright &copy
+            </footer>
 
 
 
@@ -176,16 +171,16 @@
 
 
 
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-        crossorigin="anonymous"></script>
-    <script src="https://code.jquery.com/jquery.js"></script>
+            <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+                integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+                crossorigin="anonymous"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+                integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+                crossorigin="anonymous"></script>
+            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+                integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+                crossorigin="anonymous"></script>
+            <script src="https://code.jquery.com/jquery.js"></script>
 
 
 
@@ -200,6 +195,8 @@
 
 <!-- BELOW CODE IS CRITICAL. IT HANDLES HOW FORM DATA IS SENT TO OUR SERVER -->
 <script type="text/javascript">
+
+
     // Our api recognizes the route (/api/tables)... and then runs the associated code (found in api-routes.js).
     // In this case the associated code "saves" the data to the table-data.js file or waitinglist-data.js file
 
@@ -238,10 +235,11 @@
 
 
                 // Pop open the modal dialog
-                $('modal').modal('show');
+                //$('.modal').modal('show');
 
 
                 $("#friendName").val("");
+                $("#friendPic").val("");
                 $("#q1").val("");
                 $("#q2").val("");
                 $("#q3").val("");
