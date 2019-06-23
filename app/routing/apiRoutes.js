@@ -22,19 +22,36 @@ module.exports = function (app) {
         // Note the code here. Our "server" will respond to requests and let users know if they have a table or not.
         // It will do this by sending out the value "true" have a table
         // req.body is available since we're using the body parsing middleware
-        if (friendsList.length > 1) {
-            friendsList.push(req.body);
-            res.json(true);
-            console.log("Truelalu");
+        var newfriend = req.body;
+        var userScore = newfriend.scores;
+
+        //var total = 0;
+        //Compute for Match
+        var matchName = "";
+        var matchPhoto = "";
+        var matchdifference = 10000; // Make the initial value big for comparison
+
+
+        // Calculating totals 
+        for (var i = 0; i < friendsList.length; i++) {
+            var diff = 0;
+            for (var j = 0; j < userScore.length; j++) {
+                diff += Math.abs(friendsList[i].friendsList.scores[j] - userScore[j]);
+
+
+                if (diff <= matchdifference) {
+                    matchName = friendsList[i].name,
+                        matchPhoto = friendsList[i].photo,
+                        matchdifference = diff
+                }
+            }
         }
-        else {
-            friendsList.push(req.body);
-            res.json(false);
-            console.log("Wrong");
-        }
+        friendsList.push(newfriend);
+        res.json({ status: 'OK', matchName: matchName, matchPhoto: matchPhoto });;
+        console.log(match);
     });
 
-    // Cear out the table while working with the functionality.
+    // Clear out the table while working with the functionality.
     app.post("/api/clear", function (req, res) {
         // Empty out the arrays of data
         friendsList.length = 0;

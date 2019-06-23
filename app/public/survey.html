@@ -146,6 +146,8 @@
                 <div class="modal-content">
                     <div class="modal-header">
                         <div class="modal-body">
+                            <h4 id="matchName"></h4>
+                            <h4 id="matchPhoto"></h4>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
 
@@ -207,16 +209,16 @@
         var newfriend = {
             newFriendName: $("#friendName").val().trim(),
             newFriendPic: $("#friendPic").val().trim(),
-            q1: $("#q1").val().trim(),
-            q2: $("#q2").val().trim(),
-            q3: $("#q3").val().trim(),
-            q4: $("#q4").val().trim(),
-            q5: $("#q5").val().trim(),
-            q6: $("#q6").val().trim(),
-            q7: $("#q7").val().trim(),
-            q8: $("#q8").val().trim(),
-            q9: $("#q9").val().trim(),
-            q10: $("#q10").val().trim()
+            newQuestions: [$("#q1").val().trim(),
+            $("#q2").val().trim(),
+            $("#q3").val().trim(),
+            $("#q4").val().trim(),
+            $("#q5").val().trim(),
+            $("#q6").val().trim(),
+            $("#q7").val().trim(),
+            $("#q8").val().trim(),
+            $("#q9").val().trim(),
+            $("#q10").val().trim()]
         };
 
         console.log(newfriend);
@@ -232,24 +234,8 @@
                 //Display Match
                 //$('#match).html(data.matchFriend);
                 //$('#modal').modal('open');
-
-
-                // Pop open the modal dialog
-                //$('.modal').modal('show');
-
-
-                $("#friendName").val("");
-                $("#friendPic").val("");
-                $("#q1").val("");
-                $("#q2").val("");
-                $("#q3").val("");
-                $("#q4").val("");
-                $("#q5").val("");
-                $("#q6").val("");
-                $("#q7").val("");
-                $("#q8").val("");
-                $("#q9").val("");
-                $("#q10").val("");
+                $("#matchName").text(data.matchName);
+                $("#matchPhoto").attr("src", data.matchPhoto);
             });
 
     });
