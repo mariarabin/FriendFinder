@@ -28,108 +28,110 @@
             <input type="text" class="form-control" id="friendName" placeholder="First Name Last Name">
             <label for="exampleFormControlInput1">Photo Link (Required)</label>
             <input type="text" class="form-control" id="friendPic" placeholder="Paste the link here...">
+
         </div>
     </div>
     </div>
     <form>
         <div class="form-group">
+            <p style="text-align: center">Select Options from Dropdown List - 1 to 5</p>
             <label for="exampleFormControlSelect1">Question 1:</label>
             <select class="form-control" id="q1">
-                <option>1 (Strongly Disagree)</option>
+                <option>1</option>
                 <option>2</option>
-                <option>3 (Neutral)</option>
+                <option>3</option>
                 <option>4</option>
-                <option>5 (Strongly Agree)</option>
+                <option>5</option>
             </select>
         </div>
         <div class="form-group">
             <label for="exampleFormControlSelect1">Question 2:</label>
             <select class="form-control" id="q2">
-                <option>1 (Strongly Disagree)</option>
+                <option>1</option>
                 <option>2</option>
-                <option>3 (Neutral)</option>
+                <option>3</option>
                 <option>4</option>
-                <option>5 (Strongly Agree)</option>
+                <option>5</option>
             </select>
         </div>
         <div class="form-group">
             <label for="exampleFormControlSelect1">Question 3:</label>
             <select class="form-control" id="q3">
-                <option>1 (Strongly Disagree)</option>
+                <option>1</option>
                 <option>2</option>
-                <option>3 (Neutral)</option>
+                <option>3</option>
                 <option>4</option>
-                <option>5 (Strongly Agree)</option>
+                <option>5</option>
             </select>
         </div>
         <div class="form-group">
             <label for="exampleFormControlSelect1">Question 4:</label>
             <select class="form-control" id="q4">
-                <option>1 (Strongly Disagree)</option>
+                <option>1</option>
                 <option>2</option>
-                <option>3 (Neutral)</option>
+                <option>3</option>
                 <option>4</option>
-                <option>5 (Strongly Agree)</option>
+                <option>5</option>
             </select>
         </div>
         <div class="form-group">
             <label for="exampleFormControlSelect1">Question 5:</label>
             <select class="form-control" id="q5">
-                <option>1 (Strongly Disagree)</option>
+                <option>1</option>
                 <option>2</option>
-                <option>3 (Neutral)</option>
+                <option>3</option>
                 <option>4</option>
-                <option>5 (Strongly Agree)</option>
+                <option>5</option>
             </select>
         </div>
         <div class="form-group">
             <label for="exampleFormControlSelect1">Question 6:</label>
             <select class="form-control" id="q6">
-                <option>1 (Strongly Disagree)</option>
+                <option>1</option>
                 <option>2</option>
-                <option>3 (Neutral)</option>
+                <option>3</option>
                 <option>4</option>
-                <option>5 (Strongly Agree)</option>
+                <option>5</option>
             </select>
         </div>
         <div class="form-group">
             <label for="exampleFormControlSelect1">Question 7:</label>
             <select class="form-control" id="q7">
-                <option>1 (Strongly Disagree)</option>
+                <option>1</option>
                 <option>2</option>
-                <option>3 (Neutral)</option>
+                <option>3</option>
                 <option>4</option>
-                <option>5 (Strongly Agree)</option>
+                <option>5</option>
             </select>
         </div>
         <div class="form-group">
             <label for="exampleFormControlSelect1">Question 8:</label>
             <select class="form-control" id="q8">
-                <option>1 (Strongly Disagree)</option>
+                <option>1</option>
                 <option>2</option>
-                <option>3 (Neutral)</option>
+                <option>3</option>
                 <option>4</option>
-                <option>5 (Strongly Agree)</option>
+                <option>5</option>
             </select>
         </div>
         <div class="form-group">
             <label for="exampleFormControlSelect1">Question 9:</label>
             <select class="form-control" id="q9">
-                <option>1 (Strongly Disagree)</option>
+                <option>1</option>
                 <option>2</option>
-                <option>3 (Neutral)</option>
+                <option>3</option>
                 <option>4</option>
-                <option>5 (Strongly Agree)</option>
+                <option>5</option>
             </select>
         </div>
         <div class="form-group">
             <label for="exampleFormControlSelect1">Question 10:</label>
             <select class="form-control" id="q10">
-                <option>1 (Strongly Disagree)</option>
+                <option>1</option>
                 <option>2</option>
-                <option>3 (Neutral)</option>
+                <option>3</option>
                 <option>4</option>
-                <option>5 (Strongly Agree)</option>
+                <option>5</option>
             </select>
         </div>
 
@@ -230,12 +232,13 @@
 
         $.post("/routes/api/friends", newfriend,
             function (data) {
-                console.log("ok");
+                console.log("ok" + data.matchName + " and " + data.matchPhoto);
                 //Display Match
                 //$('#match).html(data.matchFriend);
                 //$('#modal').modal('open');
                 $("#matchName").text(data.matchName);
-                $("#matchPhoto").attr("src", data.matchPhoto);
+                $("#matchPhoto").text(data.matchPhoto);
+                //$("#matchPhoto").attr("src", data.matchPhoto);
             });
 
     });

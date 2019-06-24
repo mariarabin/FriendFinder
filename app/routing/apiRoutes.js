@@ -1,6 +1,6 @@
 
 var friendsList = require("../data/friend");
-//var newFriend = "";
+
 
 
 module.exports = function (app) {
@@ -23,7 +23,7 @@ module.exports = function (app) {
         // It will do this by sending out the value "true" have a table
         // req.body is available since we're using the body parsing middleware
         var newfriend = req.body;
-        var userScore = newfriend.scores;
+        var userScore = newfriend.newQuestions;
 
         //var total = 0;
         //Compute for Match
@@ -36,8 +36,11 @@ module.exports = function (app) {
         for (var i = 0; i < friendsList.length; i++) {
             var diff = 0;
             for (var j = 0; j < userScore.length; j++) {
-                diff += Math.abs(friendsList[i].friendsList.scores[j] - userScore[j]);
+                console.log("scores------" + friendsList[i].scores[j]);
+                //console.log(friendsList.scores.getOwnPropertyNames());
 
+                diff = Math.abs((userScore[j] - friendsList[i].scores[j]));
+                console.log("DIFF" + diff);
 
                 if (diff <= matchdifference) {
                     matchName = friendsList[i].name,
@@ -48,7 +51,7 @@ module.exports = function (app) {
         }
         friendsList.push(newfriend);
         res.json({ status: 'OK', matchName: matchName, matchPhoto: matchPhoto });;
-        console.log(match);
+        console.log(matchName + " and " + matchPhoto);
     });
 
     // Clear out the table while working with the functionality.
