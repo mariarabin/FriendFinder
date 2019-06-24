@@ -138,39 +138,14 @@
                     <option>5</option>
                 </select>
             </div>
-
-
+            <div>
+                <button class="btn btn-danger" data-toggle="modal" data-target="#myModal" type="submit" name="action"
+                    id="submitButton">Submit</button>
+            </div>
         </form>
 
-        <button class="btn btn-danger" data-toggle="modal" data-target="#myModal" type="submit" name="action"
-            id="submitButton">Submit</button>
-        <div>
-            <div id="#myModal" class="modal fade" role="dialog" tabindex="-1" aria-labelledby="...">
-                <div class="modal=dialog">
-                    <div class="modal-dialog" role="document">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <div class="modal-body">
-                                    <h4 id="matchName"></h4>
-                                    <h4 id="matchPhoto"></h4>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary"
-                                            data-dismiss="modal">Close</button>
-
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
 
 
-
-
-
-        </div>
 
 
         <footer class="footer">
@@ -179,6 +154,22 @@
                 <a href="https://github.com/mariarabin/FriendFinder">Github Repo</a></p>
             Copyright &copy
         </footer>
+
+
+        <div>
+            <div id="myModal" class="modal fade" role="dialog" tabindex="-1" aria-labelledby="...">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <h4 id="matchName"></h4>
+                        <h4 id="matchPhoto"></h4>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </div>
 
 
@@ -252,10 +243,11 @@
                 console.log("ok" + data.matchName + " and " + data.matchPhoto);
                 //Display Match
                 //$('#match).html(data.matchFriend);
-                //$('#modal').modal('open');
+
                 $("#matchName").text(data.matchName);
                 $("#matchPhoto").text(data.matchPhoto);
                 //$("#matchPhoto").attr("src", data.matchPhoto);
+                $('#myModal').modal('open');
             });
 
     });

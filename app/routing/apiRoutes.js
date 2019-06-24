@@ -54,10 +54,5 @@ module.exports = function (app) {
         console.log(matchName + " and " + matchPhoto);
     });
 
-    // Clear out the table while working with the functionality.
-    app.post("/api/clear", function (req, res) {
-        // Empty out the arrays of data
-        friendsList.length = 0;
-        res.json({ ok: true });
-    });
+
 };
