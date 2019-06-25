@@ -43,14 +43,14 @@
         </div>
 
 
-        <form>
+        <form class="validate-form">
             <div class="form-group">
                 <br>
                 <div class="row">
                     <div class="col-sm-12">
                         <hr>
                         <h2 id="blink" style="text-align:center;"><span class="blinking"></b>Have Fun🤸‍♀️!!!</b></span>
-                        </h2><br>
+                        </h2>
                     </div>
                 </div>
                 <br>
@@ -60,7 +60,7 @@
                 <select class="chosen-select" id="q1">
                     <option value="1">1 (Strongly Disagree)</option>
                     <option value="2">2 (Disagree)</option>
-                    <option value="3">3 (Neutral) </option>
+                    <option value="3" selected>3 (Neutral) </option>
                     <option value="4">4 (Agree)</option>
                     <option value="5">5 (Strongly Agree)</option>
                 </select>
@@ -72,7 +72,7 @@
                 <select class="chosen-select" id="q2">
                     <option value="1">1 (Strongly Disagree)</option>
                     <option value="2">2 (Disagree)</option>
-                    <option value="3">3 (Neutral) </option>
+                    <option value="3" selected>3 (Neutral) </option>
                     <option value="4">4 (Agree)</option>
                     <option value="5">5 (Strongly Agree)</option>
                 </select>
@@ -84,7 +84,7 @@
                 <select class="chosen-select" id="q3">
                     <option value="1">1 (Strongly Disagree)</option>
                     <option value="2">2 (Disagree)</option>
-                    <option value="3">3 (Neutral) </option>
+                    <option value="3" selected>3 (Neutral) </option>
                     <option value="4">4 (Agree)</option>
                     <option value="5">5 (Strongly Agree)</option>
                 </select>
@@ -96,7 +96,7 @@
                 <select class="chosen-select" id="q4">
                     <option value="1">1 (Strongly Disagree)</option>
                     <option value="2">2 (Disagree)</option>
-                    <option value="3">3 (Neutral) </option>
+                    <option value="3" selected>3 (Neutral) </option>
                     <option value="4">4 (Agree)</option>
                     <option value="5">5 (Strongly Agree)</option>
                 </select>
@@ -108,7 +108,7 @@
                 <select class="chosen-select" id="q5">
                     <option value="1">1 (Strongly Disagree)</option>
                     <option value="2">2 (Disagree)</option>
-                    <option value="3">3 (Neutral) </option>
+                    <option value="3" selected>3 (Neutral) </option>
                     <option value="4">4 (Agree)</option>
                     <option value="5">5 (Strongly Agree)</option>
                 </select>
@@ -120,7 +120,7 @@
                 <select class="chosen-select" id="q6">
                     <option value="1">1 (Strongly Disagree)</option>
                     <option value="2">2 (Disagree)</option>
-                    <option value="3">3 (Neutral) </option>
+                    <option value="3" selected>3 (Neutral) </option>
                     <option value="4">4 (Agree)</option>
                     <option value="5">5 (Strongly Agree)</option>
                 </select>
@@ -131,7 +131,7 @@
                 <select class="chosen-select" id="q7">
                     <option value="1">1 (Strongly Disagree)</option>
                     <option value="2">2 (Disagree)</option>
-                    <option value="3">3 (Neutral) </option>
+                    <option value="3" selected>3 (Neutral) </option>
                     <option value="4">4 (Agree)</option>
                     <option value="5">5 (Strongly Agree)</option>
                 </select>
@@ -142,7 +142,7 @@
                 <select class="chosen-select" id="q8">
                     <option value="1">1 (Strongly Disagree)</option>
                     <option value="2">2 (Disagree)</option>
-                    <option value="3">3 (Neutral) </option>
+                    <option value="3" selected>3 (Neutral) </option>
                     <option value="4">4 (Agree)</option>
                     <option value="5">5 (Strongly Agree)</option>
                 </select>
@@ -153,7 +153,7 @@
                 <select class="chosen-select" id="q9">
                     <option value="1">1 (Strongly Disagree)</option>
                     <option value="2">2 (Disagree)</option>
-                    <option value="3">3 (Neutral) </option>
+                    <option value="3" selected>3 (Neutral) </option>
                     <option value="4">4 (Agree)</option>
                     <option value="5">5 (Strongly Agree)</option>
                 </select>
@@ -165,7 +165,7 @@
                 <select class="chosen-select" id="q10">
                     <option value="1">1 (Strongly Disagree)</option>
                     <option value="2">2 (Disagree)</option>
-                    <option value="3">3 (Neutral) </option>
+                    <option value="3" selected>3 (Neutral) </option>
                     <option value="4">4 (Agree)</option>
                     <option value="5">5 (Strongly Agree)</option>
                 </select>
@@ -192,18 +192,17 @@
                     <div class="modal-content">
                         <p id="congrats" style="margin-left: 20px"><br> Hooray! We found your friend match and he/she
                             is...</p>
-                        <p id="matchName" style="margin-left: 20px"> </p><br>
-                        <p id="matchPhoto" style="margin-left: 20px"> </p>
-                        <div class="container">
-                            <img id="#myModal" class="img-responsive" src="" alt="">
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        </div>
+                        <h2 id="matchName" style="margin-left: 20px" style="color: coral"> </h2><br>
+                        <img id="matchPhoto"
+                            src="https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg" alt="">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
 
     </div>
 
@@ -253,10 +252,24 @@
                 $("#matchName").text(data.matchName);
                 //$("#matchPhoto").text(data.matchPhoto);
                 $("#matchPhoto").attr("src", data.matchPhoto);
-                //$('#myModal').modal('open');
-                $('#myModal').modal('handleUpdate');
+                $('#myModal').modal('open');
+                //$('#myModal').modal('handleUpdate');
             });
 
     });
+
+
+    function validateform() {
+        var name = document.myform.name.value;
+        var password = document.myform.password.value;
+
+        if (name == null || name == "") {
+            alert("Name can't be blank");
+            return false;
+        } else if (password.length < 6) {
+            alert("Password must be at least 6 characters long.");
+            return false;
+        }
+    }
 
 </script>

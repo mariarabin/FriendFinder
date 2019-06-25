@@ -25,10 +25,10 @@ module.exports = function (app) {
                 console.log("scores------" + friendsList[i].scores[j]);
                 //console.log(friendsList.scores.getOwnPropertyNames());
 
-                diff = Math.abs((userScore[j] - friendsList[i].scores[j]));
+                diff += Math.abs((userScore[j] - friendsList[i].scores[j]));
                 console.log("DIFF is" + diff);
 
-                if (diff <= matchdifference) {
+                if (diff < matchdifference) {
                     matchName = friendsList[i].name,
                         matchPhoto = friendsList[i].photo,
                         matchdifference = diff
