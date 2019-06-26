@@ -34,9 +34,9 @@
 
         <div id="info" class="card text-white bg-danger mb-3" style="max-width: 38rem;">
             <div class="form-group">
-                <label for="exampleFormControlInput1"> Name (Required)</label>
+                <label for="exampleFormControlInput1"> Name</label>
                 <input type="text" class="form-control" id="friendName" placeholder="First Name Last Name" required>
-                <label for="exampleFormControlInput1"> Photo Link (Required)</label>
+                <label for="exampleFormControlInput1"> Photo Link</label>
                 <input type="text" class="form-control" id="friendPic" placeholder="Paste the link here..." required>
 
             </div>
@@ -244,6 +244,7 @@
         };
         if (newfriend.name == "" && newfriend.photo == "") {
             alert("Name or Photo link field is blank");
+            return false;
         } else {
             console.log(newfriend);
             $.post("/routes/api/friends", newfriend,
