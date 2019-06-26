@@ -3,7 +3,7 @@
 var friendsList = [
     {
         name: 'Jean Grey',
-        photo: 'https://www.petakids.com/wp-content/uploads/2015/11/Cute-Red-Bunny.jpg',
+        photo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Cute_dog.jpg/800px-Cute_dog.jpg',
         scores: [
             '1',
             '3',
@@ -33,7 +33,7 @@ var friendsList = [
     },
     {
         name: 'Storm',
-        photo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/Cute_grey_kitten.jpg/1600px-Cute_grey_kitten.jpg',
+        photo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Cute_dog.jpg/800px-Cute_dog.jpg',
         scores: [
             '2',
             '5',

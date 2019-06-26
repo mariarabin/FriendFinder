@@ -243,33 +243,24 @@
             $("#q9").val().trim(),
             $("#q10").val().trim()]
         };
-
-        console.log(newfriend);
-        $.post("/routes/api/friends", newfriend,
-            function (data) {
-                console.log("ok" + data.matchName + " and " + data.matchPhoto);
-                //Display Match
-                $("#matchName").text(data.matchName);
-                //$("#matchPhoto").text(data.matchPhoto);
-                $("#matchPhoto").attr("src", data.matchPhoto);
-                $('#myModal').modal('open');
-                //$('#myModal').modal('handleUpdate');
-            });
-
+        if (newfriend.newFriendName == "" && newfriend.newFriendPic == "") {
+            alert("Name or picture field is blank");
+        } else {
+            console.log(newfriend);
+            $.post("/routes/api/friends", newfriend,
+                function (data) {
+                    console.log("ok" + data.matchName + " and " + data.matchPhoto);
+                    //Display Match
+                    $("#matchName").text(data.matchName);
+                    //$("#matchPhoto").text(data.matchPhoto);
+                    $("#matchPhoto").attr("src", data.matchPhoto);
+                    $('#myModal').modal("show");
+                    //$('#myModal').modal('handleUpdate');
+                });
+        }
     });
 
 
-    function validateform() {
-        var name = document.myform.name.value;
-        var password = document.myform.password.value;
 
-        if (name == null || name == "") {
-            alert("Name can't be blank");
-            return false;
-        } else if (password.length < 6) {
-            alert("Password must be at least 6 characters long.");
-            return false;
-        }
-    }
 
 </script>
