@@ -193,8 +193,7 @@
                         <p id="congrats" style="margin-left: 20px"><br> Hooray! We found your friend match and he/she
                             is...</p>
                         <h2 id="matchName" style="margin-left: 20px" style="color: coral"> </h2><br>
-                        <img id="matchPhoto"
-                            src="https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg" alt="">
+                        <img id="matchPhoto" src="" alt=""></img>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -230,9 +229,9 @@
 
         // Here we grab the form elements
         var newfriend = {
-            newFriendName: $("#friendName").val().trim(),
-            newFriendPic: $("#friendPic").val().trim(),
-            newQuestions: [$("#q1").val().trim(),
+            name: $("#friendName").val().trim(),
+            photo: $("#friendPic").val().trim(),
+            scores: [$("#q1").val().trim(),
             $("#q2").val().trim(),
             $("#q3").val().trim(),
             $("#q4").val().trim(),
@@ -243,8 +242,8 @@
             $("#q9").val().trim(),
             $("#q10").val().trim()]
         };
-        if (newfriend.newFriendName == "" && newfriend.newFriendPic == "") {
-            alert("Name or picture field is blank");
+        if (newfriend.name == "" && newfriend.photo == "") {
+            alert("Name or Photo link field is blank");
         } else {
             console.log(newfriend);
             $.post("/routes/api/friends", newfriend,

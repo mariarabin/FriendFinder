@@ -10,7 +10,7 @@ module.exports = function (app) {
     // API POST Request
     app.post("/routes/api/friends", function (req, res) {
         var newfriend = req.body;
-        var userScore = newfriend.newQuestions;
+        var userScore = newfriend.scores;
 
         //Compute for Match
         var matchName = "";
